@@ -1,0 +1,5 @@
+<form #searchForm="ngForm" (ngSubmit)="getSearchTerm(searchForm)">
+    <label for="searchTerm">Search</label>
+    <input type="text" id="searchTerm" name="searchTerm" ngModel required/>
+    <button [disabled]="searchForm.invalid">Submit</button>
+</form>
