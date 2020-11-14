@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MoviesService } from '../movies.service';
@@ -5,16 +6,29 @@ import { MoviesService } from '../movies.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
   movieData: any;
 
-  constructor(private router: Router, private route: ActivatedRoute, private service: MoviesService) { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private service: MoviesService,
+    private http: HttpClient
+  ) {}
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe((response) => {
       let queryParams = response;
+      if (queryParams.get('term') === null) {
+        this.service
+          .getLatest().subscribe((response)=>{
+            this.movieData=response
+            console.log(this.movieData);
+            
+          })
+      } else {
         this.service
           .getMovies(queryParams.get('term'))
           .subscribe((response) => {
@@ -32,5 +46,4 @@ export class HomeComponent implements OnInit {
       },
     });
   };
-
 }

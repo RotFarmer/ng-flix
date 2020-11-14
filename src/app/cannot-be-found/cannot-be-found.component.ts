@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MoviesService } from '../movies.service';
 
 @Component({
   selector: 'app-cannot-be-found',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CannotBeFoundComponent implements OnInit {
 
-  constructor() { }
+  constructor( private service:MoviesService) { }
 
   ngOnInit(): void {
   }

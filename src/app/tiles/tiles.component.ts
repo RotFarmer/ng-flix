@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+// import {movie} from '../interface/movie';
 
 @Component({
   selector: 'app-tiles',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tiles.component.css']
 })
 export class TilesComponent implements OnInit {
-
+  @Input() movieRef: any;
   constructor() { }
 
   ngOnInit(): void {
