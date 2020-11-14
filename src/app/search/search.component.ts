@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MoviesService } from '../movies.service';
 
 @Component({
   selector: 'app-search',
@@ -8,14 +9,16 @@ import { NgForm } from '@angular/forms';
 })
 export class SearchComponent implements OnInit {
   @Output() submitEvent = new EventEmitter<string>();
-  constructor() { }
+  
+  constructor(private service:MoviesService) { }
 
   ngOnInit(): void {
   }
 
   getSearchTerm = (form: NgForm): void => {
-    console.log(form);
-    this.submitEvent.emit(form.value.searchTerm);
+    console.log(form.value);
+    let searchTerm = form.value.searchTerm
+    this.submitEvent.emit(searchTerm.replace(/%20/g, '+'));
   };
 
 }
