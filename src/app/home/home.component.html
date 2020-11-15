@@ -1,14 +1,12 @@
-<header>
-  <div class="header">
-    <h1 class="logo">*ngFlix</h1>
-    <a routerLink="/favorites"></a>
-  </div>
-  <app-search (submitEvent)="search($event)">Search</app-search>
-</header>
+<app-header></app-header>
+<app-search (submitEvent)="search($event)">Search</app-search>
+
 <div class="tile-container">
   <app-tiles
     *ngFor="let movie of movieData?.results; index as i"
     [movieRef]="movie"
+    (watchlistEvent)="toggleWatchlist($event)"
+    (detailEvent)="showDetail($event)"
   ></app-tiles>
 </div>
 <!-- <app-favorite></app-favorite>

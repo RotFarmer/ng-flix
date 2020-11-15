@@ -10,6 +10,8 @@ import { SearchComponent } from './search/search.component';
 import { TilesComponent } from './tiles/tiles.component';
 import { CannotBeFoundComponent } from './cannot-be-found/cannot-be-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
     FavoriteComponent,
     SearchComponent,
     TilesComponent,
-    CannotBeFoundComponent
+    CannotBeFoundComponent,
+    HeaderComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
