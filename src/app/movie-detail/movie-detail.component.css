@@ -1,0 +1,6 @@
+.movie-poster {
+  background-image: url("/assets/no-image-icon-6.png");
+  height: 330px;
+  width: 220px;
+  background-color: #ddd;
+}

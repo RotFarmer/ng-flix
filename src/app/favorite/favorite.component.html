@@ -1,1 +1,7 @@
-<p>favorite works!</p>
+<app-header></app-header>
+<div class="favorite container">
+  <app-tiles
+    *ngFor="let watchlistGuy of watchlist"
+    [movieRef]="watchlistGuy"
+  ></app-tiles>
+</div>
