@@ -3,3 +3,15 @@
     <input type="text" id="searchTerm" name="searchTerm" ngModel required/>
     <button [disabled]="searchForm.invalid">Submit</button>
 </form>
+<form #paramForm="ngForm" (ngSubmit)="setParams(paramForm)">
+    <label for="year">year released:</label>
+    <input type="text" name="year" id="year" ngModel>
+    <label for="rating">Rating above:</label>
+    <input type="number" name="rating" id="rating" min="0" max="9" ngModel>
+    <label for="genre">genre:</label>
+    <select id="genre" name ="genre" ngModel>
+    <option *ngFor="let genre of genres; index as i" value="{{genre.id}}">{{genre.name}}</option>
+    </select>
+     <button>submit</button>
+</form>
+

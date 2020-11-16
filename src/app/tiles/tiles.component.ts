@@ -23,12 +23,7 @@ export class TilesComponent implements OnInit {
     imdb_id: movie.imdb_id,
     title: movie.title,
     original_title: movie.original_title,
-    genres:[
-        {
-            id: 1,
-            name: "dookieboy",
-        }
-    ],
+    genres:movie.genre_ids,
     release_date: movie.release_date,
     runtime: movie.runtime,
     poster_path: movie.poster_path,
@@ -47,12 +42,7 @@ export class TilesComponent implements OnInit {
     imdb_id: movie.imdb_id,
     title: movie.title,
     original_title: movie.original_title,
-    genres:[
-        {
-            id: 1,
-            name: "dookieboy",
-        }
-    ],
+    genres:movie.genre_ids,
     release_date: movie.release_date,
     runtime: movie.runtime,
     poster_path: movie.poster_path,

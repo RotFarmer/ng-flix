@@ -15,4 +15,10 @@ export class FavoriteComponent implements OnInit {
     this.watchlist = this.service.getWatchlist();
   }
 
+
+
+    toggleWatchlist =(movie:Movie):void=>{
+      this.service.editWatchlist(movie)
+      this.service.getWatchlist()
+    }
 }

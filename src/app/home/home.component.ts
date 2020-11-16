@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from '../interface/movie';
 import { MoviesService } from '../movies.service';
@@ -23,12 +24,10 @@ export class HomeComponent implements OnInit {
     this.route.queryParamMap.subscribe((response) => {
       let queryParams = response;
       if (queryParams.get('term') === null) {
-        this.service
-          .getLatest().subscribe((response)=>{
-            this.movieData=response
-            console.log(this.movieData);
-            
-          })
+        this.service.getLatest().subscribe((response) => {
+          this.movieData = response;
+          console.log(this.movieData);
+        });
       } else {
         this.service
           .getMovies(queryParams.get('term'))
@@ -48,16 +47,23 @@ export class HomeComponent implements OnInit {
     });
   };
 
-  toggleWatchlist = (watchlistGuy: Movie):void =>{
+  toggleWatchlist = (watchlistGuy: Movie): void => {
     this.service.editWatchlist(watchlistGuy);
-  }
+  };
 
-  showDetail = (detailGuy:Movie):void =>{
+  showDetail = (detailGuy: Movie): void => {
     this.service.detailNavigate(detailGuy);
-    this.router.navigate(['/movie-detail'],{
+    this.router.navigate(['/movie-detail'], {
       queryParams: {
-        movie: detailGuy.id
-      }
-    })
-  }  
+        movie: detailGuy.id,
+      },
+    });
+  };
+  setParams =(queryParams:object):void =>{
+   this.service.getDiscover(queryParams).subscribe((response)=>{
+     console.log(response)
+     this.movieData=response
+   })
+    
+  }
 }

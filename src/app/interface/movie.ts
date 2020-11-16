@@ -1,14 +1,11 @@
+import { Genre } from '../interfaces/genre';
+
 export interface Movie {
     id:number,
     imdb_id:string | null
     title:string,
     original_title:string,
-    genres:[
-        {
-            id:number,
-            name:string,
-        }
-    ]
+    genres:Genre[]
     release_date:string,
     runtime:number,
     poster_path:string,
