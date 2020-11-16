@@ -79,11 +79,15 @@ export class MoviesService {
     });
     if (index === -1) {
       this.watchlist.push(watchlistGuy);
+      
     } else {
       this.watchlist.splice(index, 1);
     }
     console.log(this.watchlist);
+    this.getWatchlist()
   };
+
+
 
   getWatchlist = () => {
     return this.watchlist;

@@ -1,16 +1,18 @@
 <app-header></app-header>
-<img
-  src="https://image.tmdb.org/t/p/w220_and_h330_face/{{
-    detailGuy.poster_path
-  }}"
-  alt=""
-  class="movie-poster"
-/>
+<div class="tile">
+  <img
+    src="https://image.tmdb.org/t/p/w220_and_h330_face/{{
+      detailGuy.poster_path
+    }}"
+    alt=""
+    class="movie-poster"
+  />
 
-<p>Title: {{ detailGuy.title }}</p>
-<p>Overview: {{ detailGuy.overview }}</p>
-<p>Genre: {{ detailGuy.genres }}</p>
-<p>Community Rating: {{ detailGuy.vote_average }}</p>
-<p>Release date: {{ detailGuy.release_date }}</p>
-<p>Budget: {{ detailGuy.budget }}</p>
-<p>Revenue: {{ detailGuy.revenue }}</p>
+  <p>Title: {{ detailGuy.title }}</p>
+  <p>Overview: {{ detailGuy.overview }}</p>
+  <p>Genre: {{ detailGuy.genre_ids }}</p>
+  <p>Community Rating: {{ detailGuy.vote_average }}</p>
+  <p>Release date: {{ detailGuy.release_date }}</p>
+  <p>Budget: {{ detailGuy.budget }}</p>
+  <p>Revenue: {{ detailGuy.revenue }}</p>
+</div>

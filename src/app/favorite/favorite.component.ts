@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Movie } from '../interface/movie';
 import { MoviesService } from '../movies.service';
 
@@ -9,16 +10,24 @@ import { MoviesService } from '../movies.service';
 })
 export class FavoriteComponent implements OnInit {
   watchlist: Movie[]=[];
-  constructor(private service: MoviesService) { }
+  constructor(private service: MoviesService, private router: Router) { }
 
   ngOnInit(): void {
     this.watchlist = this.service.getWatchlist();
   }
 
-
+  showDetail = (detailGuy: Movie): void => {
+    this.service.detailNavigate(detailGuy);
+    this.router.navigate(['/movie-detail'], {
+      queryParams: {
+        movie: detailGuy.id,
+      },
+    });
+  };
 
     toggleWatchlist =(movie:Movie):void=>{
       this.service.editWatchlist(movie)
+      console.log(this.watchlist)
       this.service.getWatchlist()
     }
 }

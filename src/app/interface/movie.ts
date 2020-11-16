@@ -5,7 +5,7 @@ export interface Movie {
     imdb_id:string | null
     title:string,
     original_title:string,
-    genres:Genre[]
+    genre_ids:any,
     release_date:string,
     runtime:number,
     poster_path:string,
@@ -14,4 +14,5 @@ export interface Movie {
     revenue:number,
     adult:false,
     overview:string,
+    
 }

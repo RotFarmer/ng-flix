@@ -14,14 +14,12 @@ export class TilesComponent implements OnInit {
   @Input() movieRef: any;
   @Output() watchlistEvent = new EventEmitter<Movie>();
   @Output() detailEvent = new EventEmitter<Movie>();
-  homePage: boolean;
+
 
   constructor() {}
 
   ngOnInit(): void {
-    // this.router.url === '/home'
-    // ? (this.homePage = true)
-    // : (this.homePage = false);
+
   }
 
   toggleWatchlist = (movie: any) => {
@@ -30,7 +28,7 @@ export class TilesComponent implements OnInit {
       imdb_id: movie.imdb_id,
       title: movie.title,
       original_title: movie.original_title,
-      genres: this.setGenre_ids(movie.genre_ids),
+      genre_ids: this.setGenre_ids(movie.genre_ids),
       release_date: movie.release_date,
       runtime: movie.runtime,
       poster_path: movie.poster_path,
@@ -39,6 +37,7 @@ export class TilesComponent implements OnInit {
       revenue: movie.revenue,
       adult: movie.adult,
       overview: movie.overview,
+      
     };
     this.watchlistEvent.emit(watchlistGuy);
   };
@@ -49,7 +48,7 @@ export class TilesComponent implements OnInit {
       imdb_id: movie.imdb_id,
       title: movie.title,
       original_title: movie.original_title,
-      genres: this.setGenre_ids(movie.genre_ids),
+      genre_ids: this.setGenre_ids(movie.genre_ids),
       release_date: movie.release_date,
       runtime: movie.runtime,
       poster_path: movie.poster_path,
@@ -58,54 +57,54 @@ export class TilesComponent implements OnInit {
       revenue: movie.revenue,
       adult: movie.adult,
       overview: movie.overview,
+      
     };
     this.detailEvent.emit(detailGuy);
   };
   setGenre_ids = (genre_ids: any[]): any[] => {
-    console.log(genre_ids);
-    let newGenre_ids: string[] = [];
+    let newGenre_ids: any[] = [];
     genre_ids.forEach((item) => {
-      if (item === 28) {
+      if (item === 28 || item === 'action') {
         newGenre_ids.push('action');
-      } else if (item === 12) {
+      } else if (item === 12 || item === 'adventure') {
         newGenre_ids.push('adventure');
-      } else if (item === 16) {
+      } else if (item === 16 || item === 'animation') {
         newGenre_ids.push('animation');
-      } else if (item === 35) {
+      } else if (item === 35 || item === 'comedy') {
         newGenre_ids.push('comedy');
-      } else if (item === 80) {
+      } else if (item === 80 || item === 'crime') {
         newGenre_ids.push('crime');
-      } else if (item === 99) {
+      } else if (item === 99 || item === 'documentary') {
         newGenre_ids.push('documentary');
-      } else if (item === 18) {
+      } else if (item === 18 || item === 'drama') {
         newGenre_ids.push('drama');
-      } else if (item === 10751) {
+      } else if (item === 10751 || item === 'family') {
         newGenre_ids.push('family');
-      } else if (item === 14) {
+      } else if (item === 14 || item === 'fantasy') {
         newGenre_ids.push('fantasy');
-      } else if (item === 36) {
+      } else if (item === 36 || item === 'history') {
         newGenre_ids.push('history');
-      } else if (item === 27) {
+      } else if (item === 27 || item === 'horror') {
         newGenre_ids.push('horror');
-      } else if (item === 10402) {
+      } else if (item === 10402 || item === 'music') {
         newGenre_ids.push('music');
-      } else if (item === 9648) {
+      } else if (item === 9648 || item === 'mystery') {
         newGenre_ids.push('mystery');
-      } else if (item === 10749) {
+      } else if (item === 10749 || item === 'romance') {
         newGenre_ids.push('romance');
-      } else if (item === 878) {
+      } else if (item === 878 || item === 'science fiction') {
         newGenre_ids.push('science fiction');
-      } else if (item === 10770) {
+      } else if (item === 10770 || item === 'tv movie') {
         newGenre_ids.push('tv movie');
-      } else if (item === 53) {
+      } else if (item === 53 || item === 'thriller') {
         newGenre_ids.push('thriller');
-      } else if (item === 10752) {
+      } else if (item === 10752 || item === 'war') {
         newGenre_ids.push('war');
-      } else if (item === 37) {
+      } else if (item === 37 || item === 'western') {
         newGenre_ids.push('western');
       }
     });
-    console.log(newGenre_ids);
+   
     return newGenre_ids;
   };
 }
