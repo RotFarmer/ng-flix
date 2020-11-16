@@ -4,5 +4,6 @@
     *ngFor="let watchlistGuy of watchlist"
     [movieRef]="watchlistGuy"
     (watchlistEvent)="toggleWatchlist($event)"
+    (detailEvent)="showDetail($event)"
   ></app-tiles>
 </div>

@@ -98,11 +98,13 @@ export class SearchComponent implements OnInit {
     console.log(form.value);
     let searchTerm = form.value.searchTerm
     this.submitEvent.emit(searchTerm);
+    // form.reset();
   };
   setParams = (form:NgForm) =>{
     let queryParams = form.value;
     this.paramEvent.emit(queryParams)
   }
+
   // getGenres=()=>{
   //  console.log(this.service.getGenre())
   // }

@@ -64,6 +64,9 @@ export class HomeComponent implements OnInit {
      console.log(response)
      this.movieData=response
    })
+   this.router.navigate(['/home'],{
+     queryParams:queryParams
+   })
     
   }
 }
