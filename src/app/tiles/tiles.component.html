@@ -11,5 +11,10 @@
   <p>{{ setGenre_ids(movieRef.genre_ids) }}</p>
   <p>{{ movieRef.release_date }}</p>
   <!-- <p>{{ movieRef.id }}</p> -->
-  <button (click)="toggleWatchlist(movieRef)" class="fas fa-film"></button>
+  <button
+    [ngClass]="{ 'is-watchlist': movieRef.isFavorite }"
+    (click)="toggleWatchlist(movieRef)"
+    class="fas fa-film is-watchlist"
+  ></button>
 </div>
+<!-- [ngClass]="{is-watchlist: movieRef.isFavorite, is-not-watchlist: !movieRef.isFavorite}" -->

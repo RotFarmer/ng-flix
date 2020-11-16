@@ -22,5 +22,9 @@
 }
 
 .is-watchlist {
-  color: green;
+  background-color: green;
+}
+
+.is-not-watchlist {
+  color: purple;
 }

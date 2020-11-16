@@ -37,7 +37,7 @@ export class TilesComponent implements OnInit {
       revenue: movie.revenue,
       adult: movie.adult,
       overview: movie.overview,
-      
+      isFavorite: movie.isFavorite,
     };
     this.watchlistEvent.emit(watchlistGuy);
   };
@@ -57,7 +57,7 @@ export class TilesComponent implements OnInit {
       revenue: movie.revenue,
       adult: movie.adult,
       overview: movie.overview,
-      
+      isFavorite: movie.isFavorite,
     };
     this.detailEvent.emit(detailGuy);
   };

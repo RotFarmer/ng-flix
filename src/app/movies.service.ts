@@ -6,6 +6,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
+/*Array of numbers
+everytime you favorite a movie, put that id in the array
+everytime you remove a favorite, remove from the array
+have a check when displaying all movies on screen if their movie id matches an id in the array
+if so add the css class
+*/
 export class MoviesService {
   movieBaseUrl: string = 'https://api.themoviedb.org/3/search/movie/';
   trendingUrl: string = 'https://api.themoviedb.org/3/trending/movie/week';
@@ -49,6 +55,9 @@ export class MoviesService {
     if(queryParams.genre){
       parameters.with_genres = queryParams.genre
     }
+    if(queryParams.sort_by){
+      parameters.sort_by = queryParams.sort_by
+    }
     console.log(parameters);
     
     return this.http.get("https://api.themoviedb.org/3/discover/movie?", {
@@ -78,9 +87,11 @@ export class MoviesService {
       return item.id === watchlistGuy.id;
     });
     if (index === -1) {
+      watchlistGuy.isFavorite = true;
       this.watchlist.push(watchlistGuy);
       
     } else {
+      watchlistGuy.isFavorite = false;
       this.watchlist.splice(index, 1);
     }
     console.log(this.watchlist);
