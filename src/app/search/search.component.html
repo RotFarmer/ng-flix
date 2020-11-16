@@ -1,8 +1,11 @@
+<div class="search">
 <form #searchForm="ngForm" (ngSubmit)="getSearchTerm(searchForm)">
     <label for="searchTerm">Search</label>
     <input type="text" id="searchTerm" name="searchTerm" ngModel required/>
     <button [disabled]="searchForm.invalid">Submit</button>
 </form>
+</div>
+<div class="search">
 <form #paramForm="ngForm" (ngSubmit)="setParams(paramForm)">
     <label for="year">year released:</label>
     <input type="text" name="year" id="year" ngModel>
@@ -14,4 +17,4 @@
     </select>
      <button>submit</button>
 </form>
-
+</div>
