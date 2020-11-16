@@ -14,5 +14,5 @@ export interface Movie {
     revenue:number,
     adult:false,
     overview:string,
-    
+    isFavorite:boolean,
 }

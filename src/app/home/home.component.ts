@@ -59,6 +59,7 @@ export class HomeComponent implements OnInit {
       },
     });
   };
+  
   setParams =(queryParams:object):void =>{
    this.service.getDiscover(queryParams).subscribe((response)=>{
      console.log(response)
