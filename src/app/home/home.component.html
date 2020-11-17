@@ -1,5 +1,7 @@
 <app-header></app-header>
-<app-search (submitEvent)="search($event)" (paramEvent)="setParams($event)">Search</app-search>
+<app-search (submitEvent)="search($event)" (paramEvent)="setParams($event)"
+  >Search</app-search
+>
 
 <div class="tile-container">
   <app-tiles
@@ -8,6 +10,19 @@
     (watchlistEvent)="toggleWatchlist($event)"
     (detailEvent)="showDetail($event)"
   ></app-tiles>
+</div>
+
+<div class="pag-container">
+  <div class="pagination">
+    <a href="page=2">&laquo;</a>
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#">&raquo;</a>
+  </div>
 </div>
 <!-- <app-favorite></app-favorite>
 <app-cannot-be-found></app-cannot-be-found>

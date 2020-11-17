@@ -12,6 +12,7 @@ import { CannotBeFoundComponent } from './cannot-be-found/cannot-be-found.compon
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

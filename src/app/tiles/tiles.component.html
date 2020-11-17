@@ -3,20 +3,22 @@
     src="https://image.tmdb.org/t/p/w220_and_h330_face/{{
       movieRef.poster_path
     }}"
-    class="movie-poster"
+    class="movie-poster mopo"
     (click)="showDetail(movieRef)"
   />
   <div class="tile-data">
-  <p>{{ movieRef.title }}</p>
-  <p>{{ movieRef.vote_average }}</p>
-  <p>{{ setGenre_ids(movieRef.genre_ids) }}</p>
-  <p>{{ movieRef.release_date }}</p>
-  <!-- <p>{{ movieRef.id }}</p> -->
+    <p class="title">{{ movieRef.title }}</p>
+    <p>{{ movieRef.vote_average }}</p>
+    <p class="genre">{{ setGenre_ids(movieRef.genre_ids) }}</p>
+    <p>{{ sliceDate(movieRef.release_date) }}</p>
+    <!-- <p>{{ movieRef.id }}</p> -->
   </div>
   <button
     [ngClass]="{ 'is-watchlist': movieRef.isFavorite }"
     (click)="toggleWatchlist(movieRef)"
     class="fas is-watchlist"
-  >Watch List</button>
+  >
+    Watch List
+  </button>
 </div>
 <!-- [ngClass]="{is-watchlist: movieRef.isFavorite, is-not-watchlist: !movieRef.isFavorite}" -->
