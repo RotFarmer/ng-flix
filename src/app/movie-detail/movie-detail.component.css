@@ -1,6 +1,20 @@
+body {
+  display: flex;
+  /* justify-content: center; */
+}
+
 .movie-poster {
   background-image: url("/assets/no-image-icon-6.png");
   height: 330px;
   width: 220px;
   background-color: #ddd;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.details {
+  width: 375px;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 20px;
 }
