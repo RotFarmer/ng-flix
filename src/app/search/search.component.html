@@ -9,7 +9,7 @@
       ngModel
       required
     />
-    <button [disabled]="searchForm.invalid">Submit</button>
+    <button class="submit" [disabled]="searchForm.invalid">Submit</button>
   </form>
 </div>
 <div class="search">
@@ -24,7 +24,7 @@
         {{ genre.name }}
       </option>
     </select>
-    <label for="sort_by">Sort By: </label>
+    <label for="sort_by"> Sort By: </label>
     <select name="sort_by" id="sort_by" ngModel>
       <option value="popularity.asc">Popularity Ascending</option>
       <option value="popularity.desc">Popularity Descending</option>
@@ -33,6 +33,6 @@
       <option value="vote_average.asc">Community Rating Ascending</option>
       <option value="vote_average.desc">Community Rating Descending</option>
     </select>
-    <button>Submit</button>
+    <button class="submit">Submit</button>
   </form>
 </div>

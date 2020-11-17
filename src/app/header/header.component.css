@@ -8,11 +8,13 @@
 .logo {
   font-size: 100px;
   margin-top: 5px;
+  margin-left: 45px;
 }
 
 .favorite {
   color: rgba(255, 255, 255, 0.856);
   text-decoration: none;
   margin-top: 30px;
-  margin-right: 30px;
+  margin-right: 55px;
+  font-size: 30px;
 }

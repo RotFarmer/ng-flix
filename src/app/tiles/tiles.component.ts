@@ -65,43 +65,43 @@ export class TilesComponent implements OnInit {
     let newGenre_ids: any[] = [];
     genre_ids.forEach((item) => {
       if (item === 28 || item === 'action') {
-        newGenre_ids.push('action');
+        newGenre_ids.push(' action');
       } else if (item === 12 || item === 'adventure') {
-        newGenre_ids.push('adventure');
+        newGenre_ids.push(' adventure');
       } else if (item === 16 || item === 'animation') {
-        newGenre_ids.push('animation');
+        newGenre_ids.push(' animation');
       } else if (item === 35 || item === 'comedy') {
-        newGenre_ids.push('comedy');
+        newGenre_ids.push(' comedy');
       } else if (item === 80 || item === 'crime') {
-        newGenre_ids.push('crime');
+        newGenre_ids.push(' crime');
       } else if (item === 99 || item === 'documentary') {
-        newGenre_ids.push('documentary');
+        newGenre_ids.push(' documentary');
       } else if (item === 18 || item === 'drama') {
-        newGenre_ids.push('drama');
+        newGenre_ids.push(' drama');
       } else if (item === 10751 || item === 'family') {
-        newGenre_ids.push('family');
+        newGenre_ids.push(' family');
       } else if (item === 14 || item === 'fantasy') {
-        newGenre_ids.push('fantasy');
+        newGenre_ids.push(' fantasy');
       } else if (item === 36 || item === 'history') {
-        newGenre_ids.push('history');
+        newGenre_ids.push(' history');
       } else if (item === 27 || item === 'horror') {
-        newGenre_ids.push('horror');
+        newGenre_ids.push(' horror');
       } else if (item === 10402 || item === 'music') {
-        newGenre_ids.push('music');
+        newGenre_ids.push(' music');
       } else if (item === 9648 || item === 'mystery') {
-        newGenre_ids.push('mystery');
+        newGenre_ids.push(' mystery');
       } else if (item === 10749 || item === 'romance') {
-        newGenre_ids.push('romance');
+        newGenre_ids.push(' romance');
       } else if (item === 878 || item === 'science fiction') {
-        newGenre_ids.push('science fiction');
+        newGenre_ids.push(' science fiction');
       } else if (item === 10770 || item === 'tv movie') {
-        newGenre_ids.push('tv movie');
+        newGenre_ids.push(' tv movie');
       } else if (item === 53 || item === 'thriller') {
-        newGenre_ids.push('thriller');
+        newGenre_ids.push(' thriller');
       } else if (item === 10752 || item === 'war') {
-        newGenre_ids.push('war');
+        newGenre_ids.push(' war');
       } else if (item === 37 || item === 'western') {
-        newGenre_ids.push('western');
+        newGenre_ids.push(' western');
       }
     });
    
