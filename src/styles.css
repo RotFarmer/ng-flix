@@ -6,8 +6,11 @@ p {
 }
 body {
   font-family: "Josefin Sans", sans-serif;
-  background-color: rgba(0, 0, 0);
+  background-color: #282828;
   margin: 0;
   padding: 0;
   color: aliceblue;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

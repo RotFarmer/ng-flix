@@ -11,6 +11,7 @@ import {Genre} from '../interfaces/genre'
 export class SearchComponent implements OnInit {
   @Output() submitEvent = new EventEmitter<string>();
   @Output() paramEvent = new EventEmitter<object>();
+  @Output() showFilterEvent = new EventEmitter<object>();
   genres:Genre[]=[
     {
       id: 28,
@@ -105,6 +106,13 @@ export class SearchComponent implements OnInit {
     this.paramEvent.emit(queryParams)
     // form.reset();
   }
+
+//   showFilter = ():void =>{
+      
+//   }
+
+
+
 
   // getGenres=()=>{
   //  console.log(this.service.getGenre())

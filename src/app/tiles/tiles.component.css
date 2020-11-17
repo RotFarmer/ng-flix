@@ -3,6 +3,7 @@
   height: 330px;
   width: 220px;
   background-color: #ddd;
+  transition: all 0.25s;
 }
 .tile {
   display: flex;
@@ -15,6 +16,7 @@
   width: 260px;
   height: 440px;
   position: relative;
+  transition: all 0.25s;
 }
 
 .tile-data {
@@ -31,11 +33,28 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  color: rgba(128, 128, 128);
+  color: rgb(71, 70, 70);
+  transition: all 0.25s;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .fas:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.445), 0 10px 10px rgba(0, 0, 0, 0.226);
+}
+
+.mopo:hover {
+  box-shadow: 0 14px 28px rgba(158, 156, 156, 0.774),
+    0 10px 10px rgba(0, 0, 0, 0.226);
+}
+
+.title {
+  font-weight: 700;
+  font-size: larger;
+}
+
+.genre {
+  font-style: italic;
+  font-weight: 500;
 }
 
 .is-watchlist {
