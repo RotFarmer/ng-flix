@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchPageComponent } from './search-page/search-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TilesComponent,
     CannotBeFoundComponent,
     HeaderComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule,

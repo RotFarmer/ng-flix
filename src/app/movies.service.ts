@@ -43,6 +43,7 @@ export class MoviesService {
   getDiscover = (queryParams:any)=>{
     let parameters:any ={
       api_key: this.key,
+      language: "en-Us",
       
     }
     if(queryParams.year){
@@ -57,6 +58,9 @@ export class MoviesService {
     }
     if(queryParams.sort_by){
       parameters.sort_by = queryParams.sort_by
+    }
+    if(queryParams.page){
+      parameters.page = queryParams.page
     }
     console.log(parameters);
     

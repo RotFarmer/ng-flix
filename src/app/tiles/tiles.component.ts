@@ -28,7 +28,7 @@ export class TilesComponent implements OnInit {
       imdb_id: movie.imdb_id,
       title: movie.title,
       original_title: movie.original_title,
-      genre_ids: this.setGenre_ids(movie.genre_ids),
+      genre_ids: movie.genre_ids,
       release_date: movie.release_date,
       runtime: movie.runtime,
       poster_path: movie.poster_path,

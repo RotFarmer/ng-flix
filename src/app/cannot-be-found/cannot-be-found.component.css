@@ -1,0 +1,32 @@
+body{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.div{
+    position: absolute;
+    margin-top: -85px;
+    text-align: center;
+}
+
+.four{
+    font-size: 400px;
+    font-weight: 700;
+}
+
+.this{
+    font-size: 60px;
+}
+/* 
+.home{
+    margin: 75px;
+    height: 75px;
+    width: 575px;
+    border-radius: 10px;
+    background-color: #818380;
+    color: black;
+    font-size: 50px;
+} */
