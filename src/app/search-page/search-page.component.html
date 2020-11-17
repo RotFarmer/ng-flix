@@ -1,5 +1,6 @@
 <app-header></app-header>
-<app-search></app-search
+<app-search (submitEvent)="search($event)" (paramEvent)="setParams($event)"
+  >Search</app-search
 >
 
 <div class="tile-container">
@@ -11,7 +12,3 @@
   ></app-tiles>
 </div>
 
-<!-- <app-favorite></app-favorite>
-<app-cannot-be-found></app-cannot-be-found>
-
-<app-favorite></app-favorite> -->

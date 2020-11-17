@@ -1,6 +1,6 @@
 body {
   display: flex;
-  /* justify-content: center; */
+  flex-direction: column;
 }
 
 .movie-poster {
@@ -8,8 +8,9 @@ body {
   height: 330px;
   width: 220px;
   background-color: #ddd;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-left: 20px;
+  border-radius: 10px;
 }
 
 .details {
@@ -17,4 +18,74 @@ body {
   margin-top: 20px;
   margin-left: 20px;
   font-size: 20px;
+  
+}
+
+.title{
+  font-weight: 700;
+}
+
+.overview{
+  font-size: 20px;
+
+}
+
+p{
+  padding: 10px 0px;
+}
+
+.genre{
+  font-style: italic;
+  font-weight: 300;
+  font-size: smaller;
+}
+
+@media only screen and (min-width: 600px) {
+
+  body {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+  }
+
+  .movie-poster {
+    background-image: url("/assets/no-image-icon-6.png");
+    height: 330px;
+    width: 220px;
+    background-color: #ddd;
+    margin-top: 40px;
+    margin-left: 20px;
+  }
+  
+  .details {
+    width: 375px;
+    margin-top: 35px;
+    margin-left: 20px;
+    font-size: 20px;
+  }
+  
+  
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .movie-poster {
+    background-image: url("/assets/no-image-icon-6.png");
+    height: 525px;
+    width: 335px;
+    background-color: #ddd;
+    margin-top: 40px;
+    margin-left: 20px;
+  }
+
+  .details {
+    width: 375px;
+    margin-top: 35px;
+    margin-left: 20px;
+    font-size: 30px;
+  }
 }

@@ -6,14 +6,16 @@ import { MoviesService } from '../movies.service';
 @Component({
   selector: 'app-favorite',
   templateUrl: './favorite.component.html',
-  styleUrls: ['./favorite.component.css']
+  styleUrls: ['./favorite.component.css'],
 })
 export class FavoriteComponent implements OnInit {
-  watchlist: Movie[]=[];
-  constructor(private service: MoviesService, private router: Router) { }
+  watchlist: Movie[] = [];
+  constructor(private service: MoviesService, private router: Router) {}
 
   ngOnInit(): void {
+   
     this.watchlist = this.service.getWatchlist();
+    this.checkWatchlist(this.watchlist, this.watchlist);
   }
 
   showDetail = (detailGuy: Movie): void => {
@@ -25,9 +27,19 @@ export class FavoriteComponent implements OnInit {
     });
   };
 
-    toggleWatchlist =(movie:Movie):void=>{
-      this.service.editWatchlist(movie)
-      console.log(this.watchlist)
-      this.service.getWatchlist()
-    }
+  toggleWatchlist = (movie: Movie): void => {
+    this.service.editWatchlist(movie);
+    console.log(this.watchlist);
+    this.service.getWatchlist();
+  };
+  checkWatchlist = (watchlist: Movie[], movieData: any) => {
+    movieData.forEach((item) => {
+      let isFavorite = watchlist.some((favorite) => {
+        return favorite.id === item.id;
+      });
+      if (isFavorite) {
+        item.favorite = true;
+      }
+    });
+  };
 }

@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MoviesService } from '../movies.service';
 import {Genre} from '../interfaces/genre'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -9,9 +10,8 @@ import {Genre} from '../interfaces/genre'
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  @Output() submitEvent = new EventEmitter<string>();
-  @Output() paramEvent = new EventEmitter<object>();
   @Output() showFilterEvent = new EventEmitter<object>();
+  
   genres:Genre[]=[
     {
       id: 28,
@@ -90,26 +90,45 @@ export class SearchComponent implements OnInit {
       name: "Western"
   }
   ]
-  constructor(private service:MoviesService) { }
+  constructor(private service:MoviesService,private router:Router) { }
 
   ngOnInit(): void {
   }
 
   getSearchTerm = (form: NgForm): void => {
-    console.log(form.value);
-    let searchTerm = form.value.searchTerm
-    this.submitEvent.emit(searchTerm);
-    // form.reset();
+    this.router.navigate(['/home'], {
+        queryParams:{
+            term:form.value.searchTerm,
+        }
+    })
   };
+  
   setParams = (form:NgForm) =>{
-    let queryParams = form.value;
-    this.paramEvent.emit(queryParams)
-    // form.reset();
+    let parameters:any = {}
+    if(form.value.genre){
+        parameters.genre=form.value.genre
+    }
+    if(form.value.page){
+        parameters.page=form.value.page
+    }
+    if(form.value.rating){
+        parameters.rating=form.value.rating
+        
+    }
+    if(form.value.sort_by){
+        parameters.sort_by=form.value.sort_by
+    }
+    if(form.value.year){
+        parameters.year=form.value.year
+    }
+    this.router.navigate(['/home'],{
+        queryParams:parameters
+    })
   }
 
-//   showFilter = ():void =>{
+ //   showFilter = ():void =>{
       
-//   }
+ //   }
 
 
 

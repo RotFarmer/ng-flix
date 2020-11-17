@@ -12,7 +12,8 @@ import { MoviesService } from '../movies.service';
 })
 export class HomeComponent implements OnInit {
   movieData: any;
-
+  watchlist: Movie[] = [];
+  page: number = 1;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -21,34 +22,37 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.watchlist = this.service.getWatchlist();
     this.route.queryParamMap.subscribe((response) => {
-      let queryParams = response;
-      if (queryParams.get('term') === null) {
+      let test: any = response;
+      let term = response.get('term');
+      if (term === null && test.params === null) {
         this.service.getLatest().subscribe((response) => {
           this.movieData = response;
-          console.log(this.movieData);
+          this.watchlist = this.service.getWatchlist();
+          this.checkWatchlist(this.watchlist, this.movieData);
+        });
+      } else if (term !== null) {
+        this.service.getMovies(term).subscribe((response) => {
+          this.movieData = response;
+          this.watchlist = this.service.getWatchlist();
+          this.checkWatchlist(this.watchlist, this.movieData);
         });
       } else {
-        this.service
-          .getMovies(queryParams.get('term'))
-          .subscribe((response) => {
-            console.log(response);
-            this.movieData = response;
-          });
+        this.service.getDiscover(test.params).subscribe((response) => {
+          this.movieData = response;
+          this.watchlist = this.service.getWatchlist();
+          this.checkWatchlist(this.watchlist, this.movieData);
+        });
       }
     });
   }
 
-  search = (term: string) => {
-    this.router.navigate(['/home'], {
-      queryParams: {
-        term: term,
-      },
-    });
-  };
-
   toggleWatchlist = (watchlistGuy: Movie): void => {
     this.service.editWatchlist(watchlistGuy);
+    this.watchlist = this.service.getWatchlist();
+    this.checkWatchlist(this.watchlist, this.movieData);
+    console.log(this.movieData);
   };
 
   showDetail = (detailGuy: Movie): void => {
@@ -59,15 +63,17 @@ export class HomeComponent implements OnInit {
       },
     });
   };
-  
-  setParams =(queryParams:object):void =>{
-   this.service.getDiscover(queryParams).subscribe((response)=>{
-     console.log(response)
-     this.movieData=response
-   })
-   this.router.navigate(['/home'],{
-     queryParams:queryParams
-   })
-    
-  }
+
+  checkWatchlist = (watchlist: Movie[], movieData: any) => {
+    movieData.results.forEach((item) => {
+      let isFavorite = watchlist.some((favorite) => {
+        return favorite.id === item.id;
+      });
+      if (isFavorite) {
+        item.favorite = true;
+      } else {
+        item.favorite = false;
+      }
+    });
+  };
 }

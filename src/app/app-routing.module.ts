@@ -4,11 +4,13 @@ import { CannotBeFoundComponent } from './cannot-be-found/cannot-be-found.compon
 import { FavoriteComponent } from './favorite/favorite.component';
 import { HomeComponent } from './home/home.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { SearchPageComponent } from './search-page/search-page.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'favorite', component: FavoriteComponent },
   { path: 'movie-detail', component: MovieDetailComponent},
+  { path: 'search-page', component: SearchPageComponent},
   { path: '',   redirectTo: '/home', pathMatch: 'full' }, // redirect to `first-component`
   { path: '**', component: CannotBeFoundComponent },  // Wildcard route for a 404 page
 ];
