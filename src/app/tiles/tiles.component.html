@@ -14,11 +14,11 @@
     <!-- <p>{{ movieRef.id }}</p> -->
   </div>
   <button
-    [ngClass]="{ 'is-watchlist': movieRef.favorite }"
+    
     (click)="toggleWatchlist(movieRef)"
-    class="fas is-watchlist"
+    class="watchlist-button is-watchlist"
   >
-    Watch List
+  <i class="fas fa-film is-watchlist"[ngClass]="{ 'is-watchlist': movieRef.favorite }"></i>
   </button>
 </div>
 <!-- [ngClass]="{is-watchlist: movieRef.isFavorite, is-not-watchlist: !movieRef.isFavorite}" -->
