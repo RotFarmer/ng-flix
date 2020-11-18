@@ -4,7 +4,7 @@ body {
 }
 
 .movie-poster {
-  background-image: url("/assets/no-image-icon-6.png");
+  background-image: url("/assets/no_image.png");
   height: 330px;
   width: 220px;
   background-color: #ddd;
@@ -40,6 +40,7 @@ p{
   font-size: smaller;
 }
 
+
 @media only screen and (min-width: 600px) {
 
   body {
@@ -49,7 +50,7 @@ p{
   }
 
   .movie-poster {
-    background-image: url("/assets/no-image-icon-6.png");
+    background-image: url("/assets/no_image.png");
     height: 330px;
     width: 220px;
     background-color: #ddd;
@@ -74,7 +75,7 @@ p{
     justify-content: center;
   }
   .movie-poster {
-    background-image: url("/assets/no-image-icon-6.png");
+    background-image: url("/assets/no_image.png");
     height: 525px;
     width: 335px;
     background-color: #ddd;

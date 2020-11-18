@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Movie } from '../interface/movie';
 import { MoviesService } from '../movies.service';
 
@@ -16,5 +16,4 @@ detailGuy: Movie;
     console.log(this.detailGuy)
   }
 
-  
 }

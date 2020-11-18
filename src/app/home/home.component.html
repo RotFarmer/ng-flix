@@ -1,7 +1,9 @@
 <app-header></app-header>
-<app-search></app-search
+<app-search *ngIf="showForm" (showFormEvent)="makeFormAppear()"></app-search
 >
-
+<div class="button-container">
+  <button class="show-button" *ngIf="!showForm" (click)="makeFormAppear()">Search...</button>
+</div>
 <div class="tile-container">
   <app-tiles
     *ngFor="let movie of movieData?.results; index as i"

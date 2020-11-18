@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
   @Output() showFilterEvent = new EventEmitter<object>();
-  
+  @Output() showFormEvent = new EventEmitter<void>()
   genres:Genre[]=[
     {
       id: 28,
@@ -125,7 +125,9 @@ export class SearchComponent implements OnInit {
         queryParams:parameters
     })
   }
-
+  emitShowFormEvent=()=>{
+      this.showFormEvent.emit();
+  }
  //   showFilter = ():void =>{
       
  //   }
