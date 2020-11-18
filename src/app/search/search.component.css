@@ -7,7 +7,6 @@
 .inpoot {
   opacity:0.2;
   transition: all 0.5s;
-  padding-right: 45px;
   margin-bottom: 4px;
   display:flex;
   flex-direction: column;
@@ -26,7 +25,7 @@
 }
 
 .close{
-  width: 58px;
+  width: 38px;
   margin-top: 5px;
 }
 .submit{

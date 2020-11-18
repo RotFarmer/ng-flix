@@ -55,3 +55,9 @@
     font-size: 21px;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .favorite{
+    margin-right: 10px
+  }
+}
