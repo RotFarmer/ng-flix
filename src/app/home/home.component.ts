@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   movieData: any;
   watchlist: Movie[] = [];
   page: number = 1;
+  showForm:boolean =false;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -76,4 +77,12 @@ export class HomeComponent implements OnInit {
       }
     });
   };
+
+  makeFormAppear =()=>{
+    if(this.showForm === false){
+      this.showForm = true;
+    }else if(this.showForm === true){
+      this.showForm = false;
+    }
+  }
 }

@@ -1,10 +1,13 @@
 .movie-poster {
-  background-image: url("/assets/no-image-icon-6.png");
+  background-image: url("/assets/no_image.png");
   height: 330px;
   width: 220px;
   z-index: 1;
-  background-color: #ddd;
   transition: all 0.25s;
+  border-radius: 20px;
+  border-image: none;
+  border-style: none;
+  overflow: hidden;
 }
 .tile {
   display: flex;
@@ -18,11 +21,12 @@
   );
   padding: 15px;
   margin: 5px;
-  border-radius: 25px;
+  border-radius: 20px;
   width: 260px;
   height: 350px;
   position: relative;
   transition: all 0.25s;
+  border:none;
 
   -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 1.5s; /* Firefox < 16 */
@@ -39,6 +43,23 @@
   width: 220px;
   text-align: center;
   color: white;
+}
+.data{
+  padding-bottom: 15px;
+}
+.rating-circle{
+  border: 1px white solid;
+  border-radius:50%;
+  width: auto;
+  height: auto;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top:8%;
+  right:16%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .watchlist-button {
@@ -63,6 +84,8 @@
 .fas {
   font-size: 32px;
   color: #f5f5f5;
+	-webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: #f5f5f5;
   transition: all 0.25s;
 }
 
@@ -85,11 +108,8 @@
 }
 
 .is-watchlist {
-  color: rgb(7, 230, 7);
-}
+  color: #36a611;
 
-.is-not-watchlist {
-  color: purple;
 }
 
 .watchlist-button:focus {
@@ -182,6 +202,9 @@
     width: 130px;
   }
 
+  .mopo:hover{
+    opacity:1;
+  }
   .tile-data {
     display: flex;
     flex-direction: column;
@@ -196,10 +219,16 @@
     position: relative;
     height: 200px;
     padding-left: 10px;
+    padding-top: 20px;
   }
 
   .watchlist-button {
-    left: 265px;
+    left: 263px;
     bottom: 0px;
+  }
+
+  .rating-circle{
+    top:3%;
+  right:3%;
   }
 }

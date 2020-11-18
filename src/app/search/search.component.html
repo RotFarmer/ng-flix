@@ -3,6 +3,7 @@
     <div class="inpoot">
       <label for="searchTerm">Search: </label>
       <input
+        class="input-box"
         type="text"
         id="searchTerm"
         name="searchTerm"
@@ -14,16 +15,11 @@
       <button class="submit" [disabled]="searchForm.invalid">Submit</button>
     </div>
   </form>
-</div>
-<div class="search">
+
   <form #paramForm="ngForm" (ngSubmit)="setParams(paramForm)">
     <div class="inpoot">
-      <label for="rating"> Community Rating Above: </label>
-      <input type="number" name="rating" id="rating" min="0" max="9" ngModel />
-    </div>
-    <div class="inpoot">
       <label for="genre"> Genre: </label>
-      <select id="genre" name="genre" onfocus="this.value=''" ngModel>
+      <select class="input-box" id="genre" name="genre" onfocus="this.value=''" ngModel>
         <option *ngFor="let genre of genres; index as i" value="{{ genre.id }}">
           {{ genre.name }}
         </option>
@@ -32,6 +28,7 @@
     <div class="inpoot">
       <label for="year"> Year Released: </label>
       <input
+        class="input-box"
         type="text"
         name="year"
         id="year"
@@ -39,9 +36,11 @@
         size="5"
         ngModel
       />
-    <div class="inpoot"></div>
+    </div>
+    <div class="inpoot">
       <label for="page"> Page: </label>
       <input
+        class="input-box"
         type="number"
         id="page"
         name="page"
@@ -52,8 +51,12 @@
       />
     </div>
     <div class="inpoot">
+      <label for="rating"> Community Rating Above: </label>
+      <input class="input-box" type="number" name="rating" id="rating" min="0" max="9" ngModel />
+    </div>
+    <div class="inpoot">
       <label for="sort_by"> Sort By: </label>
-      <select class="select-by" name="sort_by" id="sort_by" ngModel>
+      <select class="select-by input-box" name="sort_by" id="sort_by" ngModel>
         <option value="popularity.asc">Popularity Ascending</option>
         <option value="popularity.desc">Popularity Descending</option>
         <option value="primary_release_date.asc">Release Date Ascending</option>
@@ -66,6 +69,9 @@
     </div>
     <div class="filter-submit inpoot">
       <button class="submit">Submit</button>
+    </div>
+    <div class="inpoot">
+      <button class="close submit" (click)="emitShowFormEvent()">Close</button>
     </div>
   </form>
 </div>

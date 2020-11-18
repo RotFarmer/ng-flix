@@ -4,26 +4,22 @@
   justify-content: center;
 }
 
-.pag-container {
-  width: 50%;
-  margin: auto;
-  padding: 20px;
-}
-
-.pagination {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  transition: all 0.3s;
-}
-
-.pagination a {
-  padding: 8px 16px;
-  text-decoration: none;
+.show-button{
+  background-color: transparent;
+  border:none;
   color: white;
-  transition: all 0.3s;
+  font-size: 20px;
+  transition: all .3s;
 }
-.pagination a:hover {
-  background-color: #ddd;
-  color: black;
+
+.show-button:hover{
+  cursor: pointer;
+  font-size: 21px;
+}
+
+.button-container{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

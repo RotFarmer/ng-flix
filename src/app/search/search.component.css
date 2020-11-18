@@ -1,20 +1,69 @@
 .search{
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .inpoot {
   opacity:0.2;
   transition: all 0.5s;
+  padding-right: 45px;
+  margin-bottom: 4px;
   display:flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 1s; /* Firefox < 16 */
-        -ms-animation: fadein 1s; /* Internet Explorer */
-         -o-animation: fadein 1s; /* Opera < 12.1 */
-            animation: fadein 1s;
+  -webkit-animation: fadeinform 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadeinform 1s; /* Firefox < 16 */
+        -ms-animation: fadeinform 1s; /* Internet Explorer */
+         -o-animation: fadeinform 1s; /* Opera < 12.1 */
+            animation: fadeinform 1s;
+           
 }
 .inpoot:hover{
   opacity: 1;
+}
+
+.close{
+  width: 58px;
+  margin-top: 5px;
+}
+.submit{
+  margin-top: 5px;
+}
+
+.input-box{
+  background: none;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom:white 1px solid ;
+  width: 100px;
+  color: white;
+}
+
+select option{
+  color:white;
+  background: #363636;
+  border: 1px solid #363636;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.submit{
+  background-color: transparent;
+  border:white 1px solid;
+  color: white;
+  font-size: 15px;
+  transition: all .3s;
+  border-radius: 25px;
 }
 
 /* 
@@ -34,31 +83,32 @@
 } */
 
 
-@keyframes fadein {
+@keyframes fadeinform {
   from { opacity: 0; }
-  to   { opacity: 1; }
+  to   { opacity: .2; }
 }
 
 /* Firefox < 16 */
-@-moz-keyframes fadein {
+@-moz-keyframes fadeinform {
   from { opacity: 0; }
-  to   { opacity: 1; }
+  to   { opacity: .2; }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
+@-webkit-keyframes fadeinform {
   from { opacity: 0; }
-  to   { opacity: 1; }
+  to   { opacity: .2; }
 }
 
 /* Internet Explorer */
-@-ms-keyframes fadein {
+@-ms-keyframes fadeinform {
   from { opacity: 0; }
-  to   { opacity: 1; }
+  to   { opacity: .2; }
 }
 
 /* Opera < 12.1 */
-@-o-keyframes fadein {
+@-o-keyframes fadeinform {
   from { opacity: 0; }
-  to   { opacity: 1; }
+  to   { opacity: .2; }
 }
+
