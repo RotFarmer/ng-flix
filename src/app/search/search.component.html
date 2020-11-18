@@ -1,45 +1,71 @@
 <div class="search">
   <form #searchForm="ngForm" (ngSubmit)="getSearchTerm(searchForm)">
-    <label for="searchTerm">Search: </label>
-    <input
-      type="text"
-      id="searchTerm"
-      name="searchTerm"
-      onfocus="this.value=''"
-      placeholder="Title"
-      ngModel
-      required
-  />
-    <button class="submit" [disabled]="searchForm.invalid">Submit</button>
+    <div class="inpoot">
+      <label for="searchTerm">Search: </label>
+      <input
+        type="text"
+        id="searchTerm"
+        name="searchTerm"
+        onfocus="this.value=''"
+        placeholder="Title"
+        ngModel
+        required
+      />
+      <button class="submit" [disabled]="searchForm.invalid">Submit</button>
+    </div>
   </form>
 </div>
 <div class="search">
   <form #paramForm="ngForm" (ngSubmit)="setParams(paramForm)">
-    <div>
-      <label for="year"> Year Released: </label>
-      <input type="text" name="year" id="year" onfocus="this.value=''" size="5" ngModel />
+    <div class="inpoot">
       <label for="rating"> Community Rating Above: </label>
       <input type="number" name="rating" id="rating" min="0" max="9" ngModel />
+    </div>
+    <div class="inpoot">
       <label for="genre"> Genre: </label>
       <select id="genre" name="genre" onfocus="this.value=''" ngModel>
         <option *ngFor="let genre of genres; index as i" value="{{ genre.id }}">
           {{ genre.name }}
         </option>
       </select>
+    </div>
+    <div class="inpoot">
+      <label for="year"> Year Released: </label>
+      <input
+        type="text"
+        name="year"
+        id="year"
+        onfocus="this.value=''"
+        size="5"
+        ngModel
+      />
+    <div class="inpoot"></div>
       <label for="page"> Page: </label>
-      <input type="number" id="page" name="page" min="1" onfocus="this.value=''" size="5" ngModel>
+      <input
+        type="number"
+        id="page"
+        name="page"
+        min="1"
+        onfocus="this.value=''"
+        size="5"
+        ngModel
+      />
+    </div>
+    <div class="inpoot">
       <label for="sort_by"> Sort By: </label>
       <select class="select-by" name="sort_by" id="sort_by" ngModel>
         <option value="popularity.asc">Popularity Ascending</option>
         <option value="popularity.desc">Popularity Descending</option>
         <option value="primary_release_date.asc">Release Date Ascending</option>
-        <option value="primary_release_date.desc">Release Date Descending</option>
+        <option value="primary_release_date.desc">
+          Release Date Descending
+        </option>
         <option value="vote_average.asc">Community Rating Ascending</option>
         <option value="vote_average.desc">Community Rating Descending</option>
       </select>
-      <div class="filter-submit">
-        <button class="submit">Submit</button>
-      </div>
+    </div>
+    <div class="filter-submit inpoot">
+      <button class="submit">Submit</button>
     </div>
   </form>
 </div>

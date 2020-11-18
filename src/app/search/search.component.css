@@ -1,50 +1,22 @@
-
-.search {
-  display: flex;
-  /* flex-direction: column; */
+.search{
+  justify-content: center;
+}
+.inpoot {
+  opacity:0.2;
+  transition: all 0.5s;
+  display:flex;
+  justify-content: center;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-  margin: auto;
-  padding: 5px;
-  width: 50%;
-  /* background-color: slategray; */
   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 1s; /* Firefox < 16 */
         -ms-animation: fadein 1s; /* Internet Explorer */
          -o-animation: fadein 1s; /* Opera < 12.1 */
             animation: fadein 1s;
 }
-
-.submit {
-  margin-left: 5px;
-  margin-top: 5px;
+.inpoot:hover{
+  opacity: 1;
 }
 
-.submit {
-  margin-left: 5px;
-  margin-top: 5px;
-}
-
-.submit {
-  margin-left: 5px;
-  margin-top: 5px;
-}
-
-.submit {
-  margin-left: 5px;
-  margin-top: 5px;
-}
-
-.filter-submit{
-  display: flex;
-  justify-content: center;
-}
- 
-.select-by{
-  width: 150px;
-} 
 /* 
 @media only screen and (min-width: 768px){
   .search {
