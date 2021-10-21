@@ -1,6 +1,6 @@
 {
-  "name": "ng-flix",
-  "version": "0.0.0",
+  "name": "ngflix",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~11.0.0",
     "@angular/platform-browser-dynamic": "~11.0.0",
     "@angular/router": "~11.0.0",
+    "colors": "file:../testmodules/colors",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -43,5 +44,24 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.2"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RotFarmer/ng-flix.git"
+  },
+  "keywords": [
+    "netflix",
+    "angular",
+    "css",
+    "typescript",
+    "html"
+  ],
+  "author": "joe cambridge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RotFarmer/ng-flix/issues"
+  },
+  "homepage": "https://github.com/RotFarmer/ng-flix#readme"
 }
